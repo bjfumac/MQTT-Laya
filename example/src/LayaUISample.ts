@@ -70,13 +70,33 @@ function onLoaded(): void {
 		protocolId: 'MQIsdp',
 		protocolVersion: 3,
 		clean: true,
+		reconnectPeriod: 1000,
+  		connectTimeout: 30 * 1000,
+		keepalive: 10,
+		username: 'ex',
+  		password: 'ex',
+		rejectUnauthorized: false,
+		will: {
+			topic: 'MyTopic',
+			payload: 'Connection Fatal Error',
+			qos: 0,
+			retain: false
 		}
+	}
 	var client:mqtt.MqttClient = mqtt.connect("ws://127.0.0.1:3653",options);
 	client.on('connect',  () => {
 		console.log("MQTT Server connected");
 	})
 	client.on('error', function (err) {
-		console.log(err)
-		client.end()
+		console.log(err);
+		//client.end();
+	})
+	client.on('connect', function () {
+		client.subscribe('msg');
+		client.publish('msg', 'Hello World');
+	})
+
+	client.on('message', function (topic, message) {
+		console.log(message.toString());
 	})
 }
