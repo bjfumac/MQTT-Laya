@@ -2,7 +2,7 @@
 A MQTT client over WebSocket for LayaAir(LayaBox). 
 # 说明
 &emsp;&emsp;MQTT-Laya是一款用LayaAir引擎实现的基于MQTT通讯协议的客户端库。<br />
-&emsp;&emsp;结合本人的[mqant-docker分布式后端服务器](https://github.com/bjfumac/mqant-docker)和[Porobuf-Laya前后端通讯协议](https://github.com/bjfumac/Protobuf-Laya)可构建一套完整的HTML5游戏解决方案。
+&emsp;&emsp;结合本人整合的[mqant-docker分布式服务器架构](https://github.com/bjfumac/mqant-docker)和[Porobuf-Laya前后端通讯协议](https://github.com/bjfumac/Protobuf-Laya)可构建一套完整的HTML5游戏解决方案。
 # 特点
 1. 底层基于WebSocket协议，兼容各种浏览器和移动设备。
 2. 针对LayaAir的TypeScript框架开发。具有完整的代码提示和类型检测机制。
